@@ -128,7 +128,7 @@ STRIPE_KEY = ''
 LOGIN_REDIRECT_URL = '/product/home'
 
 DEBUG = False
-ALLOWED_HOSTS =  ['pltw123.herokuapp.com']
+ALLOWED_HOSTS =  ['pltw123.herokuapp.com/']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
