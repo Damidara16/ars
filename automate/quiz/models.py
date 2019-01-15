@@ -1,5 +1,5 @@
 from django.db import models
-
+"""
 class Quiz(models.Model):
     g1 = models.ForeignKey('Group', on_delete=models.CASCADE)
     g2 = models.ForeignKey('Group', on_delete=models.CASCADE)
@@ -25,3 +25,4 @@ class TakenQuiz(models.Model):
     q4 = models.CharField(max_length=1, choices=qs)
     q5 = models.CharField(max_length=1, choices=qs)
     q6 = models.CharField(max_length=1, choices=qs)
+"""
