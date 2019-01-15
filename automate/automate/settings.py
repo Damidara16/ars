@@ -128,7 +128,7 @@ STRIPE_KEY = ''
 LOGIN_REDIRECT_URL = '/product/home'
 
 DEBUG = False
-ALLOWED_HOSTS =  ['pltw4321.herokuapp.com']
+ALLOWED_HOSTS =  ['pltw123.herokuapp.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -140,4 +140,4 @@ DATABASES = {
 import dj_database_url
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-DATABASES['default']['CONN_MAX_AGE'] = 500
+#DATABASES['default']['CONN_MAX_AGE'] = 500
