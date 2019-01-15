@@ -1,0 +1,6 @@
+<form method='GET' action="{% url 'quiz:verify' %}"  role="search" >
+    <input type="text" value='{{request.GET.q}}' class="form-control" name='q' placeholder="Return Tag Lookup Code"/>
+    <input type="text" value='{{request.GET.e}}' class="form-control" name='e' placeholder="Purchase Tag Lookup Code"/>
+
+      <button type="submit" value='Search'>Search</button>
+</form>

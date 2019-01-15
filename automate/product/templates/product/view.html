@@ -1,0 +1,6 @@
+{%  for i in qs %}
+<a href="{{i.get_absolute_url}}">{{i}}</a>
+<br>
+{% endfor %}
+
+<a href="{% url 'product:home' %}">home</a>
