@@ -22,15 +22,6 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            """reg = form.save(commit=False)
-            reg.email = form.cleaned_data['email']
-            reg.username = form.cleaned_data['username']
-            reg.first_name = form.cleaned_data['first_name']
-            reg.last_name = form.cleaned_data['last_name']
-            reg.password1 = form.cleaned_data['password1']
-            reg.password2 = form.cleaned_data['password2']
-
-            reg.save()"""
             return redirect(reverse('product:home'))
 
         else:
@@ -76,14 +67,14 @@ def collectItems(items, user, uuid):
         l.append(a.uuid)
         return l
 #list of uuids, the library func will then recall django will the uuids to print the tags
-
-def LogTransaction(request):
 #CAN PRINT TAG BASED OF TOTAL TRANSACTION AMOUNT AND PRINT A TAG FOR EACH ITEM
 #CAN PRINT TAG BASED ON INDIVIUAL ITEM PRICE
 #CAN PRINT TAG BASED CATEGORY OF ITEM
 #CAN PRINT TAG BASED ON CERTAIN ITEMS
 
 #could use ip to decide which store it is or the store passes it themselves
+def LogTransaction(request):
+
     serializer = LogSerializer(data=request.data)
     if serializer.is_valid():
         store = request.user.store

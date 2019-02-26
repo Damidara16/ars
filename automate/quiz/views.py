@@ -18,3 +18,39 @@ def verify(request):
 
 def preverify(request):
     return render(request, 'quiz/verify.html')
+
+
+@api_view(['POST'])
+def createReturnTag(request, aws=[]):
+    serializer = Answers(request.data)
+    if serializer.is_valid():
+        rates = []
+        if serializer.data['q1'] or serializer.data['q2'] == False:
+            return Response({'outcome':'return not up to standards of our return policy'})
+        id = serializer.data['tagId']
+        a = PurchaseTag.objects.get(lookup_code=id)
+        if a.exists():
+            rates.append(10)
+
+
+
+        result = sum(rates)/len(rates)
+
+        if result > request.user.PrintTagItems.limit:
+            b = ReturnTag.objects.create()
+            return Response({'outcome':b.lookup_code})
+{
+q1:,
+q2:,
+onSale:,
+tagId:,
+wieght:,
+category:,
+itemName:,
+reason:,
+price:,
+method:,
+last4:,
+storeId:,
+timeBought:
+}
